@@ -1,6 +1,8 @@
 # Lesson_21
 # Primary application file
-Completing the JointSavings smart contract in solidity.  Then create a folder named Execution_Results that contains eight images.  The images will confirm that the deposit and withdrawl transactions that test the JointSavings functionality in the JavaScript VM, worked as expected.
+Create a fungible token that is ERC-20 compliant and that will be minted by using a Crowdsale contract from the OpenZeppelin Solidity library.
+
+The crowdsale contract that created will manage the entire crowdsale process, allowing users to send ether to the contract and in return receive KAI, or KaseiCoin tokens. Your contract will mint the tokens automatically and distribute them to buyers in one transaction.
 
 ---
 
@@ -26,92 +28,33 @@ Visual Studio Code
 ---
 
 ## General information about analysis.
-There are three parts to this Lesson:
+There are four parts to this Lesson:
 
-### Create a Joint Savings Account Contract in Solidity:
+### Create the KaseiCoin Token Contract:
 
-Define a new contract named JointSavings and define the following variables in the new contract:
+Import the following contracts from the OpenZeppelin library into KaseiCoin contract:
 
-   Two variables of type address payable named accountOne and accountTwo
+ERC20
 
-   A variable of type address public named lastToWithdraw
+ERC20Detailed
 
-   Two variables of type uint public named lastWithdrawAmount and contractBalance
+ERC20Mintable
 
-Define a function named withdraw that accepts two arguments: 
-    amount of type uint and recipient of type payable address. 
-    
-   In this function, code the following:
+Define a contract for the KaseiCoin token called KaseiCoin, and have the contract inherit the three contracts that you just imported from OpenZeppelin.  Then inside of your KaseiCoin contract, add a constructor with the following parameters: name, symbol, and initial_supply.  After that, as part of your constructor definition, add a call to the ERC20Detailed contract’s constructor, passing the parameters name, symbol, and 18. Recall that 18 is the value for the decimal parameter.  Finally compile the contract using compiler version 0.5.5.
 
-   Define a require statement that checks if recipient is equal to either accountOne or accountTwo. If it isn’t, the require statement returns the “You      don't own this account!” text.
-
-Define a require statement that checks if balance is sufficient for accomplishing the withdrawal operation. If there are insufficient funds, it returns the “Insufficient funds!” text.
-
-Add an if statement to check if lastToWithdraw is not equal (!=) to recipient. If it’s not equal, set it to the current value of recipient.
-
-Call the transfer function of the recipient, and pass it the amount to transfer as an argument.
-
-Set lastWithdrawAmount equal to amount.
-
-Set the contractBalance variable equal to the balance of the contract by using address(this).balance to reflect the new balance of the contract.
-
-Define a public payable function named deposit. In this function, code the following:
-
-Set the contractBalance variable equal to the balance of the contract by using address(this).balance.
-Define a public function named setAccounts that takes two address payable arguments, named account1 and account2. In the body of the function, set the values of accountOne and accountTwo to account1 and account2, respectively.
-
-Add a fallback function so that your contract can store ether that’s sent from outside the deposit function.
+![Compiled](KaseiCoin_Compile.png)
 
 
-
-### Compile and Deploy Your Contract in the JavaScript VM:
-
-Compile the file in Solidity and then click the Deploy button to deploy your smart contract, and then confirm that it successfully deployed.
-
-You can now interact with your smart contract.
+### Create the KaseiCoin Crowdsale Contract:
 
 
 
 
-### Interact with Your Deployed Smart Contract:
 
-Use the setAccounts function to define the authorized Ethereum address that will be able to withdraw funds from your contract.
-
-![Set_Accounts](./Execution_Results/Step3_1_Set_Accounts.png)
-
-Test the deposit functionality of your smart contract by sending the following amounts of ether. After each transaction, use the contractBalance function to verify that the funds were added to your contract:
-
-Transaction 1: Send 1 ether as wei:
-
-![Transaction1](./Execution_Results/Step3_2_T1A_EUC_1ETH.png)
-![Transaction1](./Execution_Results/Step3_2_T1B_1ETH_AS_WEI.png)
-![Transaction1](./Execution_Results/Step3_2_T1C_1ETH_IN_WEI_CONTRACTBALANCE.png)
+### Create the KaseiCoin Deployer Contract:
 
 
-Transaction 2: Send 10 ether as wei:
-
-![Transaction2](./Execution_Results/Step3_2_T2A_EUC_10ETH.png)
-![Transaction2](./Execution_Results/Step3_2_T2B_ADDING_10ETH_AS_WEI.png)
-![Transaction2](./Execution_Results/Step3_2_T2C_11ETH_AFTER_10ETH_WEI_ADDED.png)
-
-Transaction 3: Send 5 ether:
-
-![Transaction3](./Execution_Results/Step3_2_T3A_SEND_5ETH.png)
-![Transaction3](./Execution_Results/Step3_2_T3B_16ETH_AFTER3TRANSACTIONS.png)
-
-
-Test the contract’s withdrawal functionality by withdrawing 5 ether into accountOne:
-
-![accountOne](./Execution_Results/Step3_3_Acct1A.png)
-![accountOne](./Execution_Results/Step3_3_Acct1B.png)
-![accountOne](./Execution_Results/Step3_3_Acct1C.png)
-
-
-Test the contract’s withdrawal functionality by withdrawing 10 ether into accountTwo:
-
-![accountTwo](./Execution_Results/Step3_3_Acct2A.png)
-![accountTwo](./Execution_Results/Step3_3_Acct2B.png)
-![accountTwo](./Execution_Results/Step3_3_Acct2C.png)
+### Deploy the Crowdsale to a Local Blockchain:
 ---
 
 ## Information about datasets
