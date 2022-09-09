@@ -42,7 +42,7 @@ ERC20Mintable
 
 Define a contract for the KaseiCoin token called KaseiCoin, and have the contract inherit the three contracts that you just imported from OpenZeppelin.  Then inside of your KaseiCoin contract, add a constructor with the following parameters: name, symbol, and initial_supply.  After that, as part of your constructor definition, add a call to the ERC20Detailed contract’s constructor, passing the parameters name, symbol, and 18. Recall that 18 is the value for the decimal parameter.  Finally compile the contract using compiler version 0.5.5.
 
-![Compiled](KaseiCoin_Compile.png)
+![Compiled](./Execution_Results/KaseiCoin_Compile.png)
 
 
 ### Create the KaseiCoin Crowdsale Contract:
