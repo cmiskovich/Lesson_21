@@ -47,6 +47,10 @@ Define a contract for the KaseiCoin token called KaseiCoin, and have the contrac
 
 ### Create the KaseiCoin Crowdsale Contract:
 
+Ensure the crowd sale has the OpenZeppelin contracts for Crowdsale and MintedCrowdsale.  Next with the KaseiCoinCrowdsale constructor provide parameters for all of the features needed for the crowd sale, such as rate, wallet, and token and then configure these parameters for the KaseiCoin token.  Compile the contract using compilier version 0.5.5.
+
+![Compiled](./Execution_Results/Deploy_KaseiCoin_CrowdSale_Contract.png)
+
 
 
 
