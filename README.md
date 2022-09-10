@@ -57,6 +57,32 @@ Ensure the crowd sale has the OpenZeppelin contracts for Crowdsale and MintedCro
 
 ### Create the KaseiCoin Deployer Contract:
 
+In this section, you will create the KaseiCoin deployer contract. Start by uncommenting the KaseiCoinCrowdsaleDeployer contract in the provided KaseiCoinCrowdsale.sol starter code.
+
+Next, within the KaseiCoinCrowdsaleDeployer contract, add variables to store the addresses of the KaseiCoin and KaseiCoinCrowdsale contracts, which this contract will deploy. This is done by completing the following step:
+
+Create an address public variable called kasei_token_address, which will store KaseiCoin’s address once that contract has been deployed.
+
+Create an address public variable called kasei_crowdsale_address, which will store KaseiCoinCrowdsale's address once that contract has been deployed.
+
+Add the following parameters to the constructor for the KaseiCoinCrowdsaleDeployer contract: name, symbol, and wallet.
+
+Then create the KaseiCoin token by using a new instance of the KaseiCoin contract with parameters name and symbol, and by setting the initial_supply parameter to 0.
+
+Assign the KaseiCoin token contract’s address to the kasei_token_address variable. This will allow you to easily fetch the token's address later.
+
+Create a new instance of the KaseiCoinCrowdsale contract using the following parameters, rate, wallet (Pass wallet, and token. 
+
+Assign the KaseiCoin crowdsale contract’s address to the kasei_crowdsale_address variable. This will allow you to easily fetch the crowdsale’s address later.
+
+Set the KaseiCoinCrowdsale contract as a minter.
+
+Have the KaseiCoinCrowdsaleDeployer renounce its minter role.
+
+Compile the contract using compiler version 0.5.5.
+
+![Deployer_contract](./Execution_Results/CrowdFund_Compiled.png)
+
 
 ### Deploy the Crowdsale to a Local Blockchain:
 ---
