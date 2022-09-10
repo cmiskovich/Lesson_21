@@ -13,39 +13,46 @@ contract KaseiCoinCrowdsale { // UPDATE THE CONTRACT SIGNATURE TO ADD INHERITANC
     // Provide parameters for all of the features of your crowdsale, such as the `rate`, `wallet` for fundraising, and `token`.
     constructor(
         // YOUR CODE HERE!
-    ) public Crowdsale(rate, wallet, token) {
+        uint256 rate, // rate in TKNbits - uint256 and uint are interchangeable - https://docs.soliditylang.org/en/v0.4.21/types.html#value-types
+        address payable wallet, // sale beneficiary
+        KaseiCoin token // the KaseiCoin itself that the ArcadeTokenCrowdsale will work with    
+    ) 
+        public KaseiCoinCrowdsale(rate, wallet, token) {
         // constructor can stay empty
     }
 }
 
-/*
+
 contract KaseiCoinCrowdsaleDeployer {
     // Create an `address public` variable called `kasei_token_address`.
-    // YOUR CODE HERE!
+    address public kasei_token_address;
     // Create an `address public` variable called `kasei_crowdsale_address`.
-    // YOUR CODE HERE!
+    address public kasei_crowdsale_address;
 
     // Add the constructor.
     constructor(
        // YOUR CODE HERE!
+        string memory name,
+        string memory symbol,
+        address payable wallet
     ) public {
         // Create a new instance of the KaseiCoin contract.
-        // YOUR CODE HERE!
+        KaseiCoin token = new KaseiCoin(name, symbol, 0);
         
         // Assign the token contract’s address to the `kasei_token_address` variable.
-        // YOUR CODE HERE!
+        kasei_token_address = address(token);
 
         // Create a new instance of the `KaseiCoinCrowdsale` contract
-        // YOUR CODE HERE!
+        KaseiCoinCrowdsale kasei_crowdsale =
+            new KaseiCoinCrowdsale(1, wallet, token);
             
         // Aassign the `KaseiCoinCrowdsale` contract’s address to the `kasei_crowdsale_address` variable.
-        // YOUR CODE HERE!
+        kasei_crowdsale_address = address(kasei_crowdsale);
 
         // Set the `KaseiCoinCrowdsale` contract as a minter
-        // YOUR CODE HERE!
+        token.addMinter(kasei_crowdsale_address);
         
         // Have the `KaseiCoinCrowdsaleDeployer` renounce its minter role.
-        // YOUR CODE HERE!
+        token.renounceMinter();
     }
 }
-*/
