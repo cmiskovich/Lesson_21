@@ -15,7 +15,7 @@ contract KaseiCoinCrowdsale { // UPDATE THE CONTRACT SIGNATURE TO ADD INHERITANC
         // YOUR CODE HERE!
         uint256 rate, // rate in TKNbits - uint256 and uint are interchangeable - https://docs.soliditylang.org/en/v0.4.21/types.html#value-types
         address payable wallet, // sale beneficiary
-        KaseiCoin token // the KaseiCoin itself that the ArcadeTokenCrowdsale will work with    
+        KaseiCoin token // the KaseiCoin itself that the KaseiCoinCrowdsale will work with    
     ) 
         public KaseiCoinCrowdsale(rate, wallet, token) {
         // constructor can stay empty
