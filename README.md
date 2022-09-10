@@ -91,40 +91,40 @@ Compile the contract using compiler version 0.5.5.
 
 Contract:
 
-Joint Savings
+KaseiCoin
+
+KaseiCoinCrowdsale
 
 Variables:
 
    address:
     
-   accountOne
+   kasei_token_address
    
-   accountTwo
+   kasei_crowdsale_address
    
-   lastToWithdraw
+   wallet
+   
    
    uint:
    
-   lastWithdrawAmount
+   rate
    
-   contractbalance
    
-
-Functions:
-
-withdraw
-
-deposit
-
-setAccounts
-
-fallback (external payable)
+   string:
+   
+   symbol
+   
+   name
+   
 
 ---
 
 ## Libraries used in analysis
 
 pragma solidity ^0.5.0
+
+pragma solidity ^0.5.5
 
 ---
 
