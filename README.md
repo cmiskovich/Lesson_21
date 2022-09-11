@@ -88,6 +88,13 @@ Compile the contract using compiler version 0.5.5.
 
 First deploy the crowdsale to a local blockchain with Remix, MetaMask, and Ganache.
 ![Deploy_Crowdsale](./Execution_Results/Deploy_Crowdsale.png)
+Ganache for KaseiCoin file:
+![Ganache_Crowdsale](./Execution_Results/KaseiCoin.png)
+
+Ganache for KaseiCoin Crowd Sale Deployer:
+![Ganache_Crowdsale](./Execution_Results/Crowdsale_deployer.png)
+
+Ganache for KaseiCoin Crowd Sale:
 ![Ganache_Crowdsale](./Execution_Results/Transaction_Ganache.png)
 ---
 
