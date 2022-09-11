@@ -85,6 +85,10 @@ Compile the contract using compiler version 0.5.5.
 
 
 ### Deploy the Crowdsale to a Local Blockchain:
+
+First deploy the crowdsale to a local blockchain with Remix, MetaMask, and Ganache.
+![Deploy_Crowdsale](./Execution_Results/Deploy_Crowdsale.png)
+![Ganache_Crowdsale](./Execution_Results/Transaction_Ganache.png)
 ---
 
 ## Information about datasets
