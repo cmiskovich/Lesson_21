@@ -99,6 +99,18 @@ Ganache for KaseiCoin Crowd Sale Deployer:
 
 Ganache for KaseiCoin Crowd Sale:
 ![Ganache_Crowdsale](./Execution_Results/Transaction_Ganache.png)
+
+
+Test the functionality of the crowd starter by using test accounts and buy new tokens associated with accounts.  Then show total supply after purchasing tokens and total supply minted.
+Metamask transaction:
+![Metamask_transaction](./Execution_Results/MetaMask.png)
+
+Solidity Showing crowd funding:
+![Solidity_crowd_funding](./Execution_Results/Test_crowdfunding_and_showing_balance.png)
+
+Ganache transaction:
+![Ganache](./Execution_Results/Ganache_transaction.png)
+
 ---
 
 ## Information about datasets
